@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+		<meta charset="UTF-8">
+		<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="Description" content="Bootstrap Responsive Admin Web Dashboard HTML5 Template">
+		<meta name="Author" content="Spruko Technologies Private Limited">
+		<meta name="Keywords" content="admin,admin dashboard,admin dashboard template,admin panel template,admin template,admin theme,bootstrap 4 admin template,bootstrap 4 dashboard,bootstrap admin,bootstrap admin dashboard,bootstrap admin panel,bootstrap admin template,bootstrap admin theme,bootstrap dashboard,bootstrap form template,bootstrap panel,bootstrap ui kit,dashboard bootstrap 4,dashboard design,dashboard html,dashboard template,dashboard ui kit,envato templates,flat ui,html,html and css templates,html dashboard template,html5,jquery html,premium,premium quality,sidebar bootstrap 4,template admin bootstrap 4"/>
+
+		<!-- Title -->
+		<title> Azira -  Premium dashboard ui bootstrap rwd admin html5 template </title>
+
+		<!--- Favicon --->
+		<link rel="icon" href="{{ url_for('static', filename='assets/img/brand/favicon.png') }}" type="image/x-icon"/>
+
+		<!--- Icons css --->
+		<link href="{{ url_for('static', filename='assets/css/icons.css') }}" rel="stylesheet">
+
+		<!-- Owl-carousel css-->
+		<link href="{{ url_for('static', filename='assets/plugins/owl-carousel/owl.carousel.css') }}" rel="stylesheet" />
+
+		<!--- Right-sidemenu css --->
+		<link href="{{ url_for('static', filename='assets/plugins/sidebar/sidebar.css') }}" rel="stylesheet">
+
+		<!--- Style css --->
+		<link href="{{ url_for('static', filename='assets/css/style.css') }}" rel="stylesheet">
+		<link href="{{ url_for('static', filename='assets/css/skin-modes.css') }}" rel="stylesheet">
+
+		<!--- Sidemenu css --->
+		<link href="{{ url_for('static', filename='assets/css/sidemenu.css') }}" rel="stylesheet">
+
+		<!--- Animations css --->
+		<link href="{{ url_for('static', filename='assets/css/animate.css') }}" rel="stylesheet">
+		{% block head %}{% endblock %}
+	</head>
+
+
+	<body class="main-body app sidebar-mini">
+
+		<!-- Loader -->
+		<div id="global-loader">
+			<img src="{{ url_for('static', filename='assets/img/loaders/loader-4.svg') }}" class="loader-img" alt="Loader">
+		</div>
+		<!-- /Loader -->
+
+		<!-- main-sidebar opened -->
+		<div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+		<aside class="main-sidebar app-sidebar sidebar-scroll">
+			<div class="main-sidebar-header">
+				<a class="desktop-logo logo-light active" href="{{ url_for('index') }}" class="text-center mx-auto"><img src="{{ url_for('static', filename='assets/img/brand/logo.png') }}" class="main-logo"></a>
+				<a class="desktop-logo icon-logo active"href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='assets/img/brand/favicon.png') }}" class="logo-icon"></a>
+				<a class="desktop-logo logo-dark active" href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='assets/img/brand/logo-white.png') }}" class="main-logo dark-theme" alt="logo"></a>
+				<a class="logo-icon mobile-logo icon-dark active" href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='assets/img/brand/favicon-white.png') }}" class="logo-icon dark-theme" alt="logo"></a>
+			</div><!-- /logo -->
+			<div class="main-sidebar-loggedin">
+				<div class="app-sidebar__user">
+					<div class="dropdown user-pro-body text-center">
+						<div class="user-pic">
+							<img src="{{ url_for('static', filename='assets/img/faces/6.jpg') }}" alt="user-img" class="rounded-circle mCS_img_loaded">
+						</div>
+						<div class="user-info">
+							{% block mainsidebaropened %}{% endblock %}
+							<span class="text-muted app-sidebar__user-name text-sm">Administrator</span>
+						</div>
+					</div>
+				</div>
+			</div><!-- /user -->
+			<div class="sidebar-navs">
+				<ul class="nav  nav-pills-circle">
+					<li class="nav-item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Settings" aria-describedby="tooltip365540">
+						<a class="nav-link text-center m-2">
+							<i class="fe fe-settings"></i>
+						</a>
+					</li>
+					<li class="nav-item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Chat">
+						<a class="nav-link text-center m-2">
+							<i class="fe fe-mail"></i>
+						</a>
+					</li>
+					<li class="nav-item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Followers">
+						<a class="nav-link text-center m-2">
+							<i class="fe fe-user"></i>
+						</a>
+					</li>
+					<li class="nav-item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Logout">
+						<a class="nav-link text-center m-2" href="{{ url_for('logout') }}">
+							<i class="fe fe-power"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="main-sidebar-body">
+				<ul class="side-menu ">
+					<li class="slide">
+						<a class="side-menu__item" href="{{ url_for('index') }}"><i class="side-menu__icon fe fe-airplay"></i><span class="side-menu__label">Dashboard</span></a>
+					</li>
+					<li class="slide">
+						<a class="side-menu__item" href="{{ url_for('widgets') }}"><i class="side-menu__icon fe fe-database"></i><span class="side-menu__label">Widgets</span></a>
+					</li>
+					<li class="slide">
+						<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fe fe-mail menu-icons"></i><span class="side-menu__label">Mail</span><span class="badge badge-warning side-badge">5</span></a>
+						<ul class="slide-menu">
+							<li><a class="slide-item" href="mail.html">Mail</a></li>
+							<li><a class="slide-item" href="mail-compose.html">Mail Compose</a></li>
+							<li><a class="slide-item" href="mail-read.html">Read-mail</a></li>
+							<li><a class="slide-item" href="mail-settings.html">mail-settings</a></li>
+							<li><a class="slide-item" href="chat.html">Chat</a></li>
+						</ul>
+					</li>
+					<li class="slide">
+						<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fe fe-box"></i><span class="side-menu__label">Apps</span><i class="angle fe fe-chevron-down"></i></a>
+						<ul class="slide-menu">
+							<li><a class="slide-item" href="cards.html">Cards</a></li>
+							<li><a class="slide-item" href="darggablecards.html">Darggablecards</a></li>
+							<li><a class="slide-item" href="rangeslider.html">Range-slider</a></li>
+							<li><a class="slide-item" href="calendar.html">Calendar</a></li>
+							<li><a class="slide-item" href="contacts.html">Contacts</a></li>
+							<li><a class="slide-item" href="image-compare.html">Image-compare</a></li>
+							<li><a class="slide-item" href="notification.html">Notification</a></li>
+							<li><a class="slide-item" href="widget-notification.html">Widget-notification</a></li>
+							<li><a class="slide-item" href="treeview.html">Treeview</a></li>
+						</ul>
+					</li>
+					<li class="slide">
+						<a class="side-menu__item" href="icons.html"><i class="side-menu__icon fe fe-award"></i><span class="side-menu__label">Icons</span></a>
+					</li>
+					<li class="slide">
+						<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fe fe-map-pin menu-icon"></i><span class="side-menu__label">Maps</span><span class="badge badge-pink side-badge">2</span><i class="angle fe fe-chevron-down"></i></a>
+						<ul class="slide-menu">
+							<li><a class="slide-item" href="map-leaflet.html">Mapel Maps</a></li>
+							<li><a class="slide-item" href="map-vector.html">Vector Maps</a></li>
+						</ul>
+					</li>
+
+					<li class="slide">
+						<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fe fe-layout"></i><span class="side-menu__label">Tables</span><i class="angle fe fe-chevron-down"></i></a>
+						<ul class="slide-menu">
+							<li><a class="slide-item" href="table-basic.html">Basic Tables</a></li>
+							<li><a class="slide-item" href="{{ url_for('table_data') }}">Data Tables</a></li>
+						</ul>
+					</li>
+					<li class="slide">
+						<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fe fe-layers "></i><span class="side-menu__label">Elements</span><i class="angle fe fe-chevron-down"></i></a>
+						<ul class="slide-menu">
+							<li><a class="slide-item" href="alerts.html">Alerts</a></li>
+							<li><a class="slide-item" href="avatar.html">Avatar</a></li>
+							<li><a class="slide-item" href="breadcrumbs.html">Breadcrumbs</a></li>
+							<li><a class="slide-item" href="buttons.html">Buttons</a></li>
+							<li><a class="slide-item" href="badge.html">Badge</a></li>
+							<li><a class="slide-item" href="dropdown.html">Dropdown</a></li>
+							<li><a class="slide-item" href="thumbnails.html">Thumbnails</a></li>
+							<li><a class="slide-item" href="images.html">Images</a></li>
+							<li><a class="slide-item" href="list-group.html">List Group</a></li>
+							<li><a class="slide-item" href="navigation.html">Navigation</a></li>
+							<li><a class="slide-item" href="pagination.html">Pagination</a></li>
+							<li><a class="slide-item" href="popover.html">Popover</a></li>
+							<li><a class="slide-item" href="progress.html">Progress</a></li>
+							<li><a class="slide-item" href="spinners.html">Spinners</a></li>
+							<li><a class="slide-item" href="media-object.html">Media Object</a></li>
+							<li><a class="slide-item" href="typography.html">Typography</a></li>
+							<li><a class="slide-item" href="tooltip.html">Tooltip</a></li>
+							<li><a class="slide-item" href="toast.html">Toast</a></li>
+							<li><a class="slide-item" href="tags.html">Tags</a></li>
+							<li><a class="slide-item" href="tabs.html">Tabs</a></li>
+						</ul>
+					</li>
+					<li class="slide">
+						<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fe fe-package "></i><span class="side-menu__label">Advanced UI</span><i class="angle fe fe-chevron-down"></i></a>
+						<ul class="slide-menu">
+							<li><a class="slide-item" href="accordion.html">Accordion</a></li>
+							<li><a class="slide-item" href="carousel.html">Carousel</a></li>
+							<li><a class="slide-item" href="collapse.html">Collapse</a></li>
+							<li><a class="slide-item" href="modals.html">Modals</a></li>
+							<li><a class="slide-item" href="timeline.html">Timeline</a></li>
+							<li><a class="slide-item" href="sweet-alert.html">Sweet Alert</a></li>
+							<li><a class="slide-item" href="rating.html">Ratings</a></li>
+							<li><a class="slide-item" href="counters.html">Counters</a></li>
+							<li><a class="slide-item" href="search.html">Search</a></li>
+							<li><a class="slide-item" href="userlist.html">Userlist</a></li>
+							<li><a class="slide-item" href="blog.html">Blog</a></li>
+						</ul>
+					</li>
+					<li class="slide">
+						<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fe fe-file"></i><span class="side-menu__label">Forms</span><span class="badge badge-info side-badge">6</span><i class="angle fe fe-chevron-down"></i></a>
+						<ul class="slide-menu">
+							<li><a class="slide-item" href="form-elements.html">Form Elements</a></li>
+							<li><a class="slide-item" href="form-advanced.html">Advanced Forms</a></li>
+							<li><a class="slide-item" href="form-layouts.html">Form Layouts</a></li>
+							<li><a class="slide-item" href="form-validation.html">Form Validation</a></li>
+							<li><a class="slide-item" href="form-wizards.html">Form Wizards</a></li>
+							<li><a class="slide-item" href="form-editor.html">WYSIWYG Editor</a></li>
+						</ul>
+					</li>
+					<li class="slide">
+						<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fe fe-bar-chart-2 "></i><span class="side-menu__label">Charts</span><span class="badge badge-danger side-badge">5</span><i class="angle fe fe-chevron-down"></i></a>
+						<ul class="slide-menu">
+							<li><a class="slide-item" href="chart-morris.html">Morris Charts</a></li>
+							<li><a class="slide-item" href="chart-flot.html">Flot Charts</a></li>
+							<li><a class="slide-item" href="chart-chartjs.html">ChartJS</a></li>
+							<li><a class="slide-item" href="chart-echart.html">Echart</a></li>
+							<li><a class="slide-item" href="chart-sparkline.html">Sparkline</a></li>
+							<li><a class="slide-item" href="chart-peity.html">Chart-peity</a></li>
+						</ul>
+					</li>
+					<li class="slide">
+						<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fe fe-compass"></i><span class="side-menu__label">Pages</span><i class="angle fe fe-chevron-down"></i></a>
+						<ul class="slide-menu">
+							<li><a class="slide-item" href="profile.html">Profile</a></li>
+							<li><a class="slide-item" href="editprofile.html">Edit-Profile</a></li>
+							<li><a class="slide-item" href="invoice.html">Invoice</a></li>
+							<li><a class="slide-item" href="pricing.html">Pricing</a></li>
+							<li><a class="slide-item" href="gallery.html">Gallery</a></li>
+							<li><a class="slide-item" href="todotask.html">Todotask</a></li>
+							<li><a class="slide-item" href="faq.html">Faqs</a></li>
+							<li><a class="slide-item" href="empty.html">Empty Page</a></li>
+						</ul>
+					</li>
+					<li class="slide">
+						<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fe fe-shopping-cart"></i><span class="side-menu__label">Ecommerce</span><span class="badge badge-success side-badge">3</span><i class="angle fe fe-chevron-down"></i></a>
+						<ul class="slide-menu">
+							<li><a class="slide-item" href="products.html">Products</a></li>
+							<li><a class="slide-item" href="product-details.html">Product-Details</a></li>
+							<li><a class="slide-item" href="product-cart.html">Cart</a></li>
+						</ul>
+					</li>
+					<li class="slide">
+						<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fe fe-codepen "></i><span class="side-menu__label">Utilities</span><i class="angle fe fe-chevron-down"></i></a>
+						<ul class="slide-menu">
+							<li><a class="slide-item" href="background.html">Background</a></li>
+							<li><a class="slide-item" href="border.html">Border</a></li>
+							<li><a class="slide-item" href="display.html">Display</a></li>
+							<li><a class="slide-item" href="flex.html">Flex</a></li>
+							<li><a class="slide-item" href="height.html">Height</a></li>
+							<li><a class="slide-item" href="margin.html">Margin</a></li>
+							<li><a class="slide-item" href="padding.html">Padding</a></li>
+							<li><a class="slide-item" href="position.html">Position</a></li>
+							<li><a class="slide-item" href="width.html">Width</a></li>
+							<li><a class="slide-item" href="extras.html">Extras</a></li>
+						</ul>
+					</li>
+					<li class="slide">
+						<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fe fe-aperture"></i><span class="side-menu__label">Custom Pages</span><i class="angle fe fe-chevron-down"></i></a>
+						<ul class="slide-menu">
+							<li><a class="slide-item" href="signin.html">Sign In</a></li>
+							<li><a class="slide-item" href="signup.html">Sign Up</a></li>
+							<li><a class="slide-item" href="forgot.html">Forgot Password</a></li>
+							<li><a class="slide-item" href="reset.html">Reset Password</a></li>
+							<li><a class="slide-item" href="lockscreen.html">Lockscreen</a></li>
+							<li><a class="slide-item" href="underconstruction.html">UnderConstruction</a></li>
+							<li><a class="slide-item" href="404.html">404 Error</a></li>
+							<li><a class="slide-item" href="500.html">500 Error</a></li>
+						</ul>
+					</li>
+					<li class="slide ">
+						<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fe fe-grid"></i><span class="side-menu__label">Submenus</span><i class="angle fe fe-chevron-down"></i></a>
+						<ul class="slide-menu">
+							<li class="sub-slide">
+								<a class="sub-side-menu__item" data-toggle="sub-slide" href="#"><span class="sub-side-menu__label">Level1</span><i class="sub-angle fe fe-chevron-down"></i></a>
+								<ul class="sub-slide-menu">
+									<li><a class="sub-slide-item" href="#">Level01</a></li>
+									<li><a class="sub-slide-item" href="#">Level02</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</aside>
+		<!-- /main-sidebar -->
+
+		<!-- main-content -->
+		<div class="main-content">
+
+			<!-- main-header -->
+			<div class="main-header  side-header">
+				<div class="container-fluid">
+					<div class="main-header-left ">
+						<div class="app-sidebar__toggle mobile-toggle" data-toggle="sidebar">
+							<a class="open-toggle" href="#"><i class="header-icons" data-eva="menu-outline"></i></a>
+							<a class="close-toggle" href="#"><i class="header-icons" data-eva="close-outline"></i></a>
+						</div>
+						<div class="responsive-logo">
+							<a href="index.html"><img src="{{ url_for('static', filename='assets/img/brand/logo-white.png') }}" class="logo-1"></a>
+							<a href="index.html"><img src="{{ url_for('static', filename='assets/img/brand/logo.png') }}" class="logo-11"></a>
+							<a href="index.html"><img src="{{ url_for('static', filename='assets/img/brand/favicon-white.png') }}" class="logo-2"></a>
+							<a href="index.html"><img src="{{ url_for('static', filename='assets/img/brand/favicon.png') }}" class="logo-12"></a>
+						</div>
+						<ul class="header-megamenu-dropdown  nav">
+							<li class="nav-item">
+								<div class="btn-group dropdown">
+									<button aria-expanded="false" aria-haspopup="true" class="btn btn-link dropdown-toggle" data-toggle="dropdown" id="dropdownMenuButton2" type="button"><span><i class="fe fe-settings"></i> Settings </span></button>
+									<div  class="dropdown-menu" >
+										<div class="dropdown-menu-header header-img p-3">
+											<div class="drop-menu-inner">
+												<div class="header-content text-left d-flex">
+												    <div class="text-white">
+														<h5 class="menu-header-title">Setting</h5>
+														<h6 class="menu-header-subtitle mb-0">Overview of theme</h6>
+													</div>
+													<div class="my-auto ml-auto">
+														<span class="badge badge-pill badge-warning float-right">View all</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="setting-scroll">
+											<div>
+												<div class="setting-menu ">
+													<a  class="dropdown-item" href="#"><i class="mdi mdi-account-outline tx-16 mr-2 mt-1"></i>Profile</a>
+													<a class="dropdown-item" href="#"><i class="mdi mdi-account-box-outline tx-16 mr-2"></i>Contacts</a>
+													<a class="dropdown-item" href="#"><i class="mdi mdi-account-location tx-16 mr-2"></i>Accounts</a>
+													<div class="dropdown-divider"></div>
+													<a class="dropdown-item" href="#"><i class="typcn typcn-briefcase tx-16 mr-2"></i>About us</a>
+													<a class="dropdown-item" href="#"><i class="mdi mdi-application tx-16 mr-2"></i>Getting start</a>
+												</div>
+											</div>
+										</div>
+										<ul class="setting-menu-footer flex-column pl-0">
+											<li class="divider mb-0 pb-0 "></li>
+											<li class="setting-menu-btn">
+												<button class=" btn-shadow btn btn-success btn-sm">Cancel</button>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</li>
+							<li class="nav-item">
+								<div class="dropdown-menu-rounded btn-group dropdown" >
+									<button aria-expanded="false" aria-haspopup="true" class="btn btn-link dropdown-toggle" data-toggle="dropdown" id="dropdownMenuButton3" type="button"><span><i class="nav-link-icon fe fe-briefcase"></i> Projects </span></button>
+									<div class="dropdown-menu-lg dropdown-menu"  x-placement="bottom-left">
+										<div class="dropdown-menu-header">
+											<div class="dropdown-menu-header-inner header-img p-3">
+												<div class="header-content text-left d-flex">
+												    <div class="text-white">
+														<h5 class="menu-header-title">Projects</h5>
+														<h6 class="menu-header-subtitle mb-0">Overview of Projects</h6>
+													</div>
+													<div class="my-auto ml-auto">
+														<span class="badge badge-pill badge-warning float-right">View all</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<a  class="dropdown-item  mt-2" href="#"><i class="dropdown-icon"></i>Mobile Application</a>
+										<a class="dropdown-item" href="#"><i class="dropdown-icon"></i>PSD Projects</a>
+										<a class="dropdown-item" href="#"><i class="dropdown-icon"></i>PHP Project</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item" href="#"><i class="dropdown-icon"></i>Wordpress Projects</a>
+										<a class="dropdown-item mb-2" href="#"><i class="dropdown-icon "></i>HTML & CSS3 Projects</a>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="main-header-right">
+						<div class="nav nav-item nav-link" id="bs-example-navbar-collapse-1">
+							<form class="navbar-form" role="search">
+								<div class="input-group">
+									<input type="text" class="form-control" placeholder="Search">
+									<span class="input-group-btn">
+										<button type="reset" class="btn btn-default">
+											<i class="fas fa-times"></i>
+										</button>
+										<button type="submit" class="btn btn-default nav-link">
+											<i class="fe fe-search"></i>
+										</button>
+									</span>
+								</div>
+							</form>
+						</div>
+						<div class="nav nav-item  navbar-nav-right ml-auto">
+							<div class="nav-item full-screen fullscreen-button">
+								<a class="new nav-link full-screen-link" href="#"><i class="fe fe-maximize"></i></span></a>
+							</div>
+							<div class="dropdown  nav-item main-header-message ">
+								<a class="new nav-link" href="#" ><i class="fe fe-mail"></i><span class=" pulse-danger"></span></a>
+								<div class="dropdown-menu">
+									<div class="menu-header-content bg-primary-gradient text-left d-flex">
+										<div class="">
+											<h6 class="menu-header-title text-white mb-0">5 new Messages</h6>
+										</div>
+										<div class="my-auto ml-auto">
+											<a class="badge badge-pill badge-warning float-right" href="#">Mark All Read</a>
+										</div>
+									</div>
+									<div class="main-message-list chat-scroll">
+										<a href="#" class="p-3 d-flex border-bottom">
+											<div class="  drop-img  cover-image  " data-image-src="{{ url_for('static', filename='assets/img/faces/3.jpg') }}">
+												<span class="avatar-status bg-teal"></span>
+											</div>
+
+											<div class="wd-90p">
+												<div class="d-flex">
+													<h5 class="mb-1 name">Paul Molive</h5>
+													<p class="time mb-0 text-right ml-auto float-right">10 min ago</p>
+												</div>
+												<p class="mb-0 desc">I'm sorry but i'm not sure how...</p>
+											</div>
+										</a>
+										<a href="#" class="p-3 d-flex border-bottom">
+											<div class="drop-img cover-image" data-image-src="{{ url_for('static', filename='assets/img/faces/2.jpg') }}">
+												<span class="avatar-status bg-teal"></span>
+											</div>
+											<div class="wd-90p">
+												<div class="d-flex">
+													<h5 class="mb-1 name">Sahar Dary</h5>
+													<p class="time mb-0 text-right ml-auto float-right">13 min ago</p>
+												</div>
+												<p class="mb-0 desc">All set ! Now, time to get to you now......</p>
+											</div>
+										</a>
+										<a href="#" class="p-3 d-flex border-bottom">
+											<div class="drop-img cover-image" data-image-src="{{ url_for('static', filename='assets/img/faces/9.jpg') }}">
+												<span class="avatar-status bg-teal"></span>
+											</div>
+											<div class="wd-90p">
+												<div class="d-flex">
+													<h5 class="mb-1 name">Khadija Mehr</h5>
+													<p class="time mb-0 text-right ml-auto float-right">20 min ago</p>
+												</div>
+												<p class="mb-0 desc">Are you ready to pickup your Delivery...</p>
+											</div>
+										</a>
+										<a href="#" class="p-3 d-flex border-bottom">
+											<div class="drop-img cover-image" data-image-src="{{ url_for('static', filename='assets/img/faces/12.jpg') }}">
+												<span class="avatar-status bg-danger"></span>
+											</div>
+											<div class="wd-90p">
+												<div class="d-flex">
+													<h5 class="mb-1 name">Barney Cull</h5>
+													<p class="time mb-0 text-right ml-auto float-right">30 min ago</p>
+												</div>
+												<p class="mb-0 desc">Here are some products ...</p>
+											</div>
+										</a>
+										<a href="#" class="p-3 d-flex border-bottom">
+											<div class="drop-img cover-image" data-image-src="{{ url_for('static', filename='assets/img/faces/5.jpg') }}">
+												<span class="avatar-status bg-teal"></span>
+											</div>
+											<div class="wd-90p">
+												<div class="d-flex">
+													<h5 class="mb-1 name">Petey Cruiser</h5>
+													<p class="time mb-0 text-right ml-auto float-right">35 min ago</p>
+												</div>
+												<p class="mb-0 desc">I'm sorry but i'm not sure how...</p>
+											</div>
+										</a>
+									</div>
+									<div class="text-center dropdown-footer">
+										<a href="#">VIEW ALL</a>
+									</div>
+								</div>
+							</div>
+							<div class="dropdown nav-item main-header-notification">
+								<a class="new nav-link" href="#"><i class="fe fe-bell"></i><span class=" pulse"></span></a>
+								<div class="dropdown-menu">
+									<div class="menu-header-content bg-primary-gradient text-left d-flex">
+										<div class="">
+											<h6 class="menu-header-title text-white mb-0">7 new Notifications</h6>
+										</div>
+										<div class="my-auto ml-auto">
+											<a class="badge badge-pill badge-warning float-right" href="#">Mark All Read</a>
+										</div>
+									</div>
+									<div class="main-notification-list Notification-scroll">
+										<a class="d-flex p-3 border-bottom" href="#">
+											<div class="notifyimg bg-success-transparent">
+												<i class="la la-shopping-basket text-success"></i>
+											</div>
+											<div class="ml-3">
+												<h5 class="notification-label mb-1">New Order Received</h5>
+												<div class="notification-subtext">1 hour ago</div>
+											</div>
+											<div class="ml-auto" >
+												<i class="las la-angle-right text-right text-muted"></i>
+											</div>
+										</a>
+										<a class="d-flex p-3 border-bottom" href="#">
+											<div class="notifyimg bg-danger-transparent">
+												<i class="la la-user-check text-danger"></i>
+											</div>
+											<div class="ml-3">
+												<h5 class="notification-label mb-1">22 verified registrations</h5>
+												<div class="notification-subtext">2 hour ago</div>
+											</div>
+											<div class="ml-auto" >
+												<i class="las la-angle-right text-right text-muted"></i>
+											</div>
+										</a>
+										<a class="d-flex p-3 border-bottom" href="#">
+											<div class="notifyimg bg-primary-transparent">
+												<i class="la la-check-circle text-primary"></i>
+											</div>
+											<div class="ml-3">
+												<h5 class="notification-label mb-1">Project has been approved</h5>
+												<div class="notification-subtext">4 hour ago</div>
+											</div>
+											<div class="ml-auto" >
+												<i class="las la-angle-right text-right text-muted"></i>
+											</div>
+										</a>
+										<a class="d-flex p-3 border-bottom" href="#">
+											<div class="notifyimg bg-pink-transparent">
+												<i class="la la-file-alt text-pink"></i>
+											</div>
+											<div class="ml-3">
+												<h5 class="notification-label mb-1">New files available</h5>
+												<div class="notification-subtext">10 hour ago</div>
+											</div>
+											<div class="ml-auto" >
+												<i class="las la-angle-right text-right text-muted"></i>
+											</div>
+										</a>
+										<a class="d-flex p-3 border-bottom" href="#">
+											<div class="notifyimg bg-warning-transparent">
+												<i class="la la-envelope-open text-warning"></i>
+											</div>
+											<div class="ml-3">
+												<h5 class="notification-label mb-1">New review received</h5>
+												<div class="notification-subtext">1 day ago</div>
+											</div>
+											<div class="ml-auto" >
+												<i class="las la-angle-right text-right text-muted"></i>
+											</div>
+										</a>
+										<a class="d-flex p-3" href="#">
+											<div class="notifyimg bg-purple-transparent">
+												<i class="la la-gem text-purple"></i>
+											</div>
+											<div class="ml-3">
+												<h5 class="notification-label mb-1">Updates Available</h5>
+												<div class="notification-subtext">2 days ago</div>
+											</div>
+											<div class="ml-auto" >
+												<i class="las la-angle-right text-right text-muted"></i>
+											</div>
+										</a>
+									</div>
+									<div class="dropdown-footer">
+										<a href="#">VIEW ALL</a>
+									</div>
+								</div>
+							</div>
+							<div class="dropdown main-profile-menu nav nav-item nav-link">
+
+								<a class="profile-user d-flex" href=""><img src="{{ url_for('static', filename='assets/img/faces/6.jpg') }}" alt="user-img" class="rounded-circle mCS_img_loaded"><span></span></a>
+
+								<div class="dropdown-menu">
+									<div class="main-header-profile header-img">
+										<div class="main-img-user"><img alt="" src="{{ url_for('static', filename='assets/img/faces/6.jpg') }}"></div>
+										<h6>Petey Cruiser</h6><span>Premium Member</span>
+									</div>
+									<a class="dropdown-item" href=""><i class="far fa-user"></i> My Profile</a>
+									<a class="dropdown-item" href=""><i class="far fa-edit"></i> Edit Profile</a>
+									<a class="dropdown-item" href=""><i class="far fa-clock"></i> Activity Logs</a>
+									<a class="dropdown-item" href=""><i class="fas fa-sliders-h"></i> Account Settings</a>
+									<a class="dropdown-item" href="page-signin.html"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
+								</div>
+							</div>
+							<div class="dropdown main-header-message right-toggle">
+								<a class="nav-link pr-0" data-toggle="sidebar-right" data-target=".sidebar-right">
+									<i class="ion ion-md-menu tx-20 bg-transparent"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /main-header -->
+
+			<!-- container -->
+			<div class="container-fluid">
+
+				<!-- breadcrumb -->
+				<div class="breadcrumb-header justify-content-between">
+					<div>
+						{% block breadcrumb %}{% endblock %}
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+								<li class="breadcrumb-item active" aria-current="page">Project</li>
+							</ol>
+						</nav>
+					</div>
+					<div class="d-flex my-auto">
+						<div class=" d-flex right-page">
+							<div class="d-flex justify-content-center mr-5">
+								<div class="">
+									<span class="d-block">
+										<span class="label ">EXPENSES</span>
+									</span>
+									<span class="value">
+										$53,000
+									</span>
+								</div>
+								<div class="ml-3 mt-2">
+									<span class="sparkline_bar"></span>
+								</div>
+							</div>
+							<div class="d-flex justify-content-center">
+								<div class="">
+									<span class="d-block">
+										<span class="label">PROFIT</span>
+									</span>
+									<span class="value">
+										$34,000
+									</span>
+								</div>
+								<div class="ml-3 mt-2">
+									<span class="sparkline_bar31"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /breadcrumb -->
+
+
+		{% block body %}{% endblock %}
+		</div>
+		<!-- /main-content -->
+
+		<!--Sidebar-right-->
+		<div class="sidebar sidebar-right sidebar-animate">
+			<div class="panel panel-primary card mb-0">
+				<div class="panel-body tabs-menu-body p-0 border-0">
+					<ul class="Date-time">
+						<li class="time">
+							<h1 class="animated ">21:00</h1>
+							<p class="animated ">Sat,October 1st 2029</p>
+						</li>
+					</ul>
+					<div class="card-body latest-tasks">
+						<h3 class="events-title"><span>Events For Week </span></h3>
+						<div class="event">
+							<div class="Day">Monday 20 Jan</div>
+							<a href="#">No Events Today</a>
+						</div>
+						<div class="event">
+							<div class="Day">Tuesday 21 Jan</div>
+							<a href="#">No Events Today</a>
+						</div>
+						<div class="event">
+							<div class="Day">Wednessday 22 Jan</div>
+							<div class="tasks">
+								<div class=" task-line primary">
+									<a href="#" class="label">
+										XML Import &amp; Export
+									</a>
+									<div class="time">
+										12:00 PM
+									</div>
+								</div>
+								<div class="checkbox">
+									<label class="check-box">
+										<label class="ckbox"><input checked="" type="checkbox"><span></span></label>
+									</label>
+								</div>
+							</div>
+							<div class="tasks">
+								<div class="task-line danger">
+									<a href="#" class="label">
+										Connect API to pages
+									</a>
+									<div class="time">
+										08:00 AM
+									</div>
+								</div>
+								<div class="checkbox">
+									<label class="check-box">
+										<label class="ckbox"><input type="checkbox"><span></span></label>
+									</label>
+								</div>
+							</div>
+						</div>
+						<div class="event">
+							<div class="Day">Thursday 23 Jan</div>
+							<div class="tasks">
+								<div class="task-line success">
+									<a href="#" class="label">
+										Create Wireframes
+									</a>
+									<div class="time">
+										06:20 PM
+									</div>
+								</div>
+								<div class="checkbox">
+									<label class="check-box">
+										<label class="ckbox"><input type="checkbox"><span></span></label>
+									</label>
+								</div>
+							</div>
+						</div>
+						<div class="event">
+							<div class="Day">Friday 24 Jan</div>
+							<div class="tasks">
+								<div class="task-line warning">
+									<a href="#" class="label">
+										Test new features in tablets
+									</a>
+									<div class="time">
+										02: 00 PM
+									</div>
+								</div>
+								<div class="checkbox">
+									<label class="check-box">
+										<label class="ckbox"><input type="checkbox"><span></span></label>
+									</label>
+								</div>
+							</div>
+							<div class="tasks">
+								<div class="task-line teal">
+									<a href="#" class="label">
+										Design Evommerce
+									</a>
+									<div class="time">
+										10: 00 PM
+									</div>
+								</div>
+								<div class="checkbox">
+									<label class="check-box">
+										<label class="ckbox"><input type="checkbox"><span></span></label>
+									</label>
+								</div>
+							</div>
+							<div class="tasks mb-0">
+								<div class="task-line purple">
+									<a href="#" class="label">
+										Fix Validation Issues
+									</a>
+									<div class="time">
+										12: 00 AM
+									</div>
+								</div>
+								<div class="checkbox">
+									<label class="check-box">
+										<label class="ckbox"><input type="checkbox"><span></span></label>
+									</label>
+								</div>
+							</div>
+						</div>
+						<div class="d-flex pagination wd-100p">
+							<a href="#">Previous</a>
+							<a href="#" class="ml-auto">Next</a>
+						</div>
+					</div>
+					<div class="card-body border-top border-bottom">
+						<div class="row">
+							<div class="col-4 text-center">
+								<a class="" href=""><i class="dropdown-icon mdi  mdi-message-outline fs-20 m-0 leading-tight"></i></a>
+								<div>Inbox</div>
+							</div>
+							<div class="col-4 text-center">
+								<a class="" href=""><i class="dropdown-icon mdi mdi-tune fs-20 m-0 leading-tight"></i></a>
+								<div>Settings</div>
+							</div>
+							<div class="col-4 text-center">
+								<a class="" href="{{ url_for('logout') }}"><i class="dropdown-icon mdi mdi-logout-variant fs-20 m-0 leading-tight"></i></a>
+								<div>Sign out</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--/Sidebar-right-->
+
+		<!-- Footer opened -->
+		<div class="main-footer ht-40">
+			<div class="container-fluid pd-t-0-f ht-100p">
+				<span>Copyright © 2020 <a href="#">Azira</a>. Designed by <a href="https://www.spruko.com/">Spruko</a> All rights reserved.</span>
+			</div>
+		</div>
+		<!-- Footer closed -->
+
+		<!--- Back-to-top --->
+		<a href="#top" id="back-to-top"><i class="las la-angle-double-up"></i></a>
+
+		<!--- JQuery min js --->
+		<script src="{{ url_for('static', filename='assets/plugins/jquery/jquery.min.js') }}"></script>
+
+		<!--- Datepicker js --->
+		<script src="{{ url_for('static', filename='assets/plugins/jquery-ui/ui/widgets/datepicker.js') }}"></script>
+
+		<!--- Bootstrap Bundle js --->
+		<script src="{{ url_for('static', filename='assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+		<!--- Ionicons js --->
+		<script src="{{ url_for('static', filename='assets/plugins/ionicons/ionicons.js') }}"></script>
+
+		<!--- Chart bundle min js --->
+		<script src="{{ url_for('static', filename='assets/plugins/chart.js/Chart.bundle.min.js') }}"></script>
+
+		<!--- JQuery sparkline js --->
+		<script src="{{ url_for('static', filename='assets/plugins/jquery-sparkline/jquery.sparkline.min.js') }}"></script>
+
+		<!--- Internal Sampledata js --->
+		<script src="{{ url_for('static', filename='assets/js/chart.flot.sampledata.js') }}"></script>
+
+		<!--- Rating js --->
+		<script src="{{ url_for('static', filename='assets/plugins/rating/jquery.rating-stars.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/plugins/rating/jquery.barrating.js') }}"></script>
+
+		<!--- Eva-icons js --->
+		<script src="{{ url_for('static', filename='assets/js/eva-icons.min.js') }}"></script>
+
+		<!--- Moment js --->
+		<script src="{{ url_for('static', filename='assets/plugins/moment/moment.js') }}"></script>
+
+		<!--- Perfect-scrollbar js --->
+		<script src="{{ url_for('static', filename='assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/plugins/perfect-scrollbar/p-scroll.js') }}"></script>
+
+		<!--- Sidebar js --->
+		<script src="{{ url_for('static', filename='assets/plugins/side-menu/sidemenu.js') }}"></script>
+
+		<!-- right-sidebar js -->
+		<script src="{{ url_for('static', filename='assets/plugins/sidebar/sidebar.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/plugins/sidebar/sidebar-custom.js') }}"></script>
+
+		<!-- Morris js -->
+		<script src="{{ url_for('static', filename='assets/plugins/raphael/raphael.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/plugins/morris.js/morris.min.js') }}"></script>
+
+		<!--- Scripts js --->
+		<script src="{{ url_for('static', filename='assets/js/script.js') }}"></script>
+
+		<!--- Index js --->
+		<script src="{{ url_for('static', filename='assets/js/index.js') }}"></script>
+
+		<!--- Custom js --->
+		<script src="{{ url_for('static', filename='assets/js/custom.js') }}"></script>
+
+			<!-- Internal Data tables -->
+		<script src="{{ url_for('static', filename='assets/plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/plugins/datatable/js/dataTables.dataTables.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/plugins/datatable/js/dataTables.responsive.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/plugins/datatable/js/responsive.dataTables.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/plugins/datatable/js/jquery.dataTables.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/plugins/datatable/js/dataTables.bootstrap4.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/plugins/datatable/js/dataTables.buttons.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/plugins/datatable/js/buttons.bootstrap4.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/plugins/datatable/js/jszip.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/plugins/datatable/js/pdfmake.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/plugins/datatable/js/vfs_fonts.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/plugins/datatable/js/buttons.html5.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/plugins/datatable/js/buttons.print.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/plugins/datatable/js/buttons.colVis.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/plugins/datatable/js/dataTables.responsive.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/plugins/datatable/js/responsive.bootstrap4.min.js') }}"></script>
+
+		<!-- datatable js -->
+		<script src="{{ url_for('static', filename='assets/js/table-data.js') }}"></script>
+	</body>
+</html>
