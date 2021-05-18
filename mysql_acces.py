@@ -1,1 +1,1 @@
-mysql_key = 'mysql://brieflie_db:P=K(+[h]ow[%@108.167.189.58/brieflie_users'
+mysql_key = 'mysql://admin:SnwuGDeSGy8RX127AcTD@database-brieflie.cnyhsovtpxay.eu-central-1.rds.amazonaws.com/users'

@@ -1,6 +1,9 @@
 from flask import Flask, render_template, request, session, redirect, url_for, flash
 from flask_sqlalchemy import SQLAlchemy
 from mysql_acces import *
+import logging
+
+logging.basicConfig(filename='flasklog.log', level=logging.DEBUG)
 
 app = Flask(__name__)
 app.secret_key = "hello"
@@ -28,20 +31,20 @@ def login():
         found_user = users.query.filter_by(email=user, password=password).first()
         if found_user:
             session["email"] = found_user.email
-            return redirect(url_for("index"))
+            return redirect(url_for("index.html"))
         else:
             flash("Wrong user or password")
             return render_template("login.html")
     else:
         if "user" in session:
-            return redirect(url_for("index"))
+            return redirect(url_for("index.html"))
         else:
             return render_template("login.html")
 
 @app.route("/signup", methods=["POST","GET"])
 def signup():
     if "user" in session:
-        return redirect(url_for("index"))
+        return redirect(url_for("index.html"))
     else:
         return render_template("signup.html")
 
@@ -51,7 +54,7 @@ def index():
         user = session["user"]
         return render_template('index.html', user=user)
     except KeyError:
-        return redirect(url_for("login"))
+        return redirect(url_for("login.html"))
 
 @app.route("/widgets")
 def widgets():
@@ -59,7 +62,7 @@ def widgets():
         user = session["user"]
         return render_template('widgets.html', user=user)
     except KeyError:
-        return redirect(url_for("login"))
+        return redirect(url_for("login.html"))
 
 @app.route("/table-data")
 def table_data():
@@ -67,14 +70,14 @@ def table_data():
         user = session["user"]
         return render_template('table-data.html', user=user)
     except KeyError:
-        return redirect(url_for("login"))
+        return redirect(url_for("login.html"))
 
 @app.route("/logout")
 def logout():
     if "user" in session:
         flash("You have been logged out!", "info")
     session.pop("user", None)
-    return redirect(url_for("login"))
+    return redirect(url_for("login.html"))
 
 
 if __name__ == "__main__":
